@@ -1,0 +1,49 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Iniciar Sesión</title>
+    <link rel="stylesheet" href="{% static 'LEX/css/autenticacion.css' %}">
+</head>
+
+<body>
+   <div class="navigation-card">
+        <a href="{% url 'index' %}" class="tab">
+          <svg
+            class="svgIcon"
+            viewBox="0 0 104 100"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M100.5 40.75V96.5H66V68.5V65H62.5H43H39.5V68.5V96.5H3.5V40.75L52 4.375L100.5 40.75Z"
+              stroke="black"
+              stroke-width="7"
+            ></path>
+          </svg>
+        </a>
+      </div>
+
+    <div class="container">
+        <h1>Iniciar Sesión</h1>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.non_field_errors }}
+            <div class="form-group">
+                {{ form.username.label_tag }}
+                {{ form.username }}
+                {{ form.username.errors }}
+            </div>
+            <div class="form-group">
+                {{ form.password.label_tag }}
+                {{ form.password }}
+                {{ form.password.errors }}
+            </div>
+            <button type="submit">Iniciar Sesión</button>
+        </form>
+        <a href="{% url 'register' %}">¿No tienes una cuenta? Regístrate aquí</a>
+    </div>
+</body>
+</html>
