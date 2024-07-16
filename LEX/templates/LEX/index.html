@@ -78,12 +78,12 @@
                     </button>
                     <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                         <div class="navbar-nav mr-auto py-0">
-                            <a href="index" class="nav-item nav-link active">Inicio</a>
+                            <a href="{% url 'index' %}" class="nav-item nav-link active">Inicio</a>
                             <a href="about.html" class="nav-item nav-link">Quienes somos</a>
-                            <a href="login" class="nav-item nav-link">Inicia sesión</a>
+                            <a href="{% url 'login' %}" class="nav-item nav-link">Inicia sesión</a>
                             <a href="about.html" class="nav-item nav-link">Envía tu solicitud</a>
                         </div>
-                        <a href="register" class="btn btn-primary mr-3 d-none d-lg-block">Registrate</a>
+                        <a href="register.html" class="btn btn-primary mr-3 d-none d-lg-block">Registrate</a>
                     </div>
                 </nav>
             </div>
